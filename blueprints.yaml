@@ -1,0 +1,27 @@
+name: API
+version: 0.1.0
+description: Adds a JSON API to Grav
+icon: code
+author:
+  name: Team Grav
+  email: devs@getgrav.org
+  url: http://getgrav.org
+homepage: https://github.com/getgrav/grav-plugin-api
+keywords: api, plugin
+bugs: https://github.com/getgrav/grav-plugin-api/issues
+readme: https://github.com/getgrav/grav-plugin-api/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
