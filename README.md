@@ -124,19 +124,20 @@ e.g. /api/users/andy
 
 ## Not yet implemented
 
-GET /api/plugins
-GET /api/plugins/shoppingcart
-GET /api/themes
-GET /api/themes/theme
-GET /api/data
-GET /api/logs
-GET /api/config
-GET /api/config/system
-GET /api/config/plugin/:pluginName
-GET /api/backups
-GET /api/gpm
-POST /api/gpm/update
-GET /api/grav
-POST /api/grav/self-upgrade
-GET /api/version
-GET /api/debug
+- GET /api/plugins
+- GET /api/plugins/shoppingcart
+- GET /api/themes
+- GET /api/themes/theme
+- GET /api/data
+- GET /api/logs
+- GET /api/config
+- GET /api/config/system
+- GET /api/config/plugin/:pluginName
+- GET /api/backups
+- GET /api/gpm
+- POST /api/gpm/update
+- GET /api/grav
+- POST /api/grav/self-upgrade
+- GET /api/version
+- GET /api/debug
+- .....
