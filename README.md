@@ -47,6 +47,8 @@ Use meaningful HTTP Status Codes (TODO)
 - Allow to limit access to a specific IP (range)
 - Use meaningful HTTP Status Codes
 - Use OAuth2 to secure the API http://oauth2.thephpleague.com/
+- JSONP
+- Return the children of a page in the page request, if desired
 
 # Authentication
 
@@ -119,8 +121,6 @@ Get a specific user
 
 e.g. /api/users/admin
 e.g. /api/users/andy
-
-### Plugins
 
 ## Not yet implemented
 
