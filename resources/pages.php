@@ -45,7 +45,6 @@ class Pages extends Resource
      */
     public function getItem()
     {
-        $this->grav['pages']->init();
         $pages = $this->grav['pages'];
         $page = $pages->dispatch('/' . $this->getIdentifier(), false);
         return $this->buildPageStructure($page);
