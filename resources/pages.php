@@ -20,8 +20,20 @@ class Pages extends Resource
      */
     public function getList()
     {
-        $this->grav['pages']->init();
-        return $this->grav['pages']->all()->toArray();
+        $pagesCollection = $this->grav['pages']->all();
+
+        $return = [];
+
+        foreach($pagesCollection as $page) {
+            $return[$page->route()] = [];
+            $return[$page->route()]['title'] = $page->title();
+            $return[$page->route()]['url'] = $page->url();
+            $return[$page->route()]['visible'] = $page->visible();
+            $return[$page->route()]['isDir'] = $page->isDir();
+            $return[$page->route()]['published'] = $page->published();
+        }
+
+        return $return;
     }
 
     /**
@@ -36,11 +48,16 @@ class Pages extends Resource
         $this->grav['pages']->init();
         $pages = $this->grav['pages'];
         $page = $pages->dispatch('/' . $this->getIdentifier(), false);
+        return $this->buildPageStructure($page);
+    }
+
+    private function buildPageStructure($page) {
         return [
             'active' => $page->active(),
             'activeChild' => $page->activeChild(),
-            'adjacentSibling' => $page->adjacentSibling(),
+            // 'adjacentSibling' => $page->adjacentSibling(),
             'blueprintName' => $page->blueprintName(),
+            //'blueprints' => $page->blueprints(),
             'children' => $page->children(),
             'childType' => $page->childType(),
             'content' => $page->content(),
@@ -49,6 +66,7 @@ class Pages extends Resource
             'expires' => $page->expires(),
             'exists' => $page->exists(),
             'extension' => $page->extension(),
+           // 'extra' => $page->extra(),
             'file' => $page->file(),
             'filePath' => $page->filePath(),
             'filePathClean' => $page->filePathClean(),
@@ -59,8 +77,8 @@ class Pages extends Resource
             'home' => $page->home(),
             'id' => $page->id(),
             'isDir' => $page->isDir(),
-            'isFirst' => $page->isFirst(),
-            'isLast' => $page->isLast(),
+            // 'isFirst' => $page->isFirst(),
+            // 'isLast' => $page->isLast(),
             'isPage' => $page->isPage(),
             'language' => $page->language(),
             'lastModified' => $page->lastModified(),
@@ -72,7 +90,7 @@ class Pages extends Resource
             'modularTwig' => $page->modularTwig(),
             'modular' => $page->modular(),
             'name' => $page->name(),
-            'nextSibling' => $page->nextSibling(),
+            // 'nextSibling' => $page->nextSibling(),
             'order' => $page->order(),
             'orderDir' => $page->orderDir(),
             'orderBy' => $page->orderBy(),
@@ -80,7 +98,7 @@ class Pages extends Resource
             'parent' => $page->parent(),
             'path' => $page->path(),
             'permalink' => $page->permalink(),
-            'prevSibling' => $page->prevSibling(),
+            // 'prevSibling' => $page->prevSibling(),
             'publishDate' => $page->publishDate(),
             'published' => $page->published(),
             'raw' => $page->raw(),
