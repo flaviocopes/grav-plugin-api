@@ -15,11 +15,11 @@ class ApiPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onPagesInitialized' => ['onPagesInitialized', 0],
         ];
     }
 
-    public function onPluginsInitialized()
+    public function onPagesInitialized()
     {
         $uri = $this->grav['uri'];
 
