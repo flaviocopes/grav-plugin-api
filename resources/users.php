@@ -16,6 +16,10 @@ class Users extends Resource
     /**
      * Get the users list
      *
+     * Implements:
+     *
+     * - GET /api/users
+     *
      * @todo:
      *
      * @return array the users list
@@ -34,6 +38,10 @@ class Users extends Resource
 
     /**
      * Get a single user
+     *
+     * Implements:
+     *
+     * - GET /api/users/:user
      *
      * @todo:
      *

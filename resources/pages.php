@@ -14,6 +14,10 @@ class Pages extends Resource
     /**
      * Get the pages list
      *
+     * Implements:
+     *
+     * - GET /api/pages
+     *
      * @todo: return an array, not an object
      *
      * @return array the pages list
@@ -38,6 +42,10 @@ class Pages extends Resource
 
     /**
      * Get a single page
+     *
+     * Implements:
+     *
+     * - GET /api/pages/:page
      *
      * @todo: return more information
      *
