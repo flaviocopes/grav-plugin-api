@@ -179,4 +179,16 @@ class Resource
         $this->setErrorCode(405); //Not Allowed
         return;
     }
+
+    /**
+     * Prepare and return POST data.
+     *
+     * @param array $post
+     * @return array
+     */
+    protected function getPost()
+    {
+        return json_decode(file_get_contents('php://input'));
+    }
+
 }
