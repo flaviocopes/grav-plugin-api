@@ -114,14 +114,22 @@ class Resource
      * @todo implement all error codes
      */
     protected function setErrorCode($code) {
-        if ((int)$code == 401) {
-            header('HTTP/1.1 401 Unauthorized');
-        }
-        if ((int)$code == 404) {
-            header('HTTP/1.1 404 Not Found');
-        }
-        if ((int)$code == 405) {
-            header('HTTP/1.1 405 Not Allowed');
+        switch((int)$code) {
+            case 401:
+                header('HTTP/1.1 401 Unauthorized');
+                break;
+            case 403:
+                header('HTTP/1.1 403 Forbidden');
+                break;
+            case 404:
+                header('HTTP/1.1 404 Not Found');
+                break;
+            case 405:
+                header('HTTP/1.1 405 Not Allowed');
+                break;
+            default:
+                header('HTTP/1.1 ' . $code);
+
         }
     }
 
@@ -189,6 +197,27 @@ class Resource
     protected function getPost()
     {
         return json_decode(file_get_contents('php://input'));
+    }
+
+
+    /**
+     * Builds the return message.
+     *
+     * Example usage from a resource action:
+     *
+     *   ```
+     *   $this->setErrorCode(403);
+     *   $message = $this->buildReturnMessage('Page already exists. Cannot create a page with the same route');
+     *   return $message;
+     *   ```
+     *
+     * @param array $post
+     * @return array
+     */
+    protected function buildReturnMessage($message) {
+        return [
+            'message' => $message
+        ];
     }
 
 }
