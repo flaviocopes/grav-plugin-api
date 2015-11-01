@@ -50,6 +50,7 @@ Use meaningful HTTP Status Codes (TODO)
 - Use OAuth2 to secure the API http://oauth2.thephpleague.com/
 - JSONP
 - Return the children of a page in the page request, if desired
+- Allow to only retrieve some fields on API calls that are heavy on the system (e.g. `GET /api/pages/:page`)
 
 # Authentication
 
