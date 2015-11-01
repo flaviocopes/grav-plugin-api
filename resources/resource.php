@@ -127,6 +127,9 @@ class Resource
             case 405:
                 header('HTTP/1.1 405 Not Allowed');
                 break;
+            case 501:
+                header('HTTP/1.1 501 Not Implemented');
+                break;
             default:
                 header('HTTP/1.1 ' . $code);
 
@@ -140,7 +143,7 @@ class Resource
      */
     public function getList()
     {
-        $this->setErrorCode(405); //Not Allowed
+        $this->setErrorCode(501); //Not Implemented
         return;
     }
 
@@ -151,7 +154,7 @@ class Resource
      */
     public function getItem()
     {
-        $this->setErrorCode(405); //Not Allowed
+        $this->setErrorCode(501); //Not Implemented
         return;
     }
 
@@ -162,7 +165,7 @@ class Resource
      */
     public function postItem()
     {
-        $this->setErrorCode(405); //Not Allowed
+        $this->setErrorCode(501); //Not Implemented
         return;
     }
 
@@ -173,7 +176,7 @@ class Resource
      */
     public function putItem()
     {
-        $this->setErrorCode(405); //Not Allowed
+        $this->setErrorCode(501); //Not Implemented
         return;
     }
 
@@ -184,7 +187,7 @@ class Resource
      */
     public function deleteItem()
     {
-        $this->setErrorCode(405); //Not Allowed
+        $this->setErrorCode(501); //Not Implemented
         return;
     }
 

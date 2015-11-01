@@ -34,8 +34,10 @@ Use meaningful HTTP Status Codes (TODO)
 - 200: Success.
 - 201: Created. Returned on successful creation of a new resource. Include a 'Location' header with a link to the newly-created resource.
 - 400: Bad request. Data issues such as invalid JSON, etc.
+- 403: Forbidden. Example: trying to create a page already existing
 - 404: Not found. Resource not found on GET.
-- 409: Conflict. Duplicate data or invalid data state would occur.
+- 405: Not Allowed.
+- 501: Not Implemented. Returned by default by non implemented API methods
 
 # Things still missing
 
@@ -45,7 +47,6 @@ Use meaningful HTTP Status Codes (TODO)
 - Use http://fractal.thephpleague.com
 - Allow plugins to add API methods
 - Allow to limit access to a specific IP (range)
-- Use meaningful HTTP Status Codes
 - Use OAuth2 to secure the API http://oauth2.thephpleague.com/
 - JSONP
 - Return the children of a page in the page request, if desired
