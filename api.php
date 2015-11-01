@@ -62,6 +62,35 @@ class ApiPlugin extends Plugin
         $username = $_SERVER['PHP_AUTH_USER'];
         $password = $_SERVER['PHP_AUTH_PW'];
         $user = User::load($username);
-        return $user->authenticate($password);
+        $isAuthenticated = $user->authenticate($password);
+
+        if ($isAuthenticated) {
+            if ($this->authorize($user, ['admin.api', 'admin.super'])) {
+                return true;
+            }
+        }
+
+        return false;
     }
+
+    /**
+     * Checks user authorisation to the action.
+     *
+     * @param  string $action
+     *
+     * @return bool
+     */
+    public function authorize($user, $action)
+    {
+        $action = (array)$action;
+
+        foreach ($action as $a) {
+            if ($user->authorize($a)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

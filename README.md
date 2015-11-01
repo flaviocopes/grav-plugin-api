@@ -55,7 +55,10 @@ Use meaningful HTTP Status Codes (TODO)
 
 In this current form the Grav API uses Basic Authentication, with the username and password currently set in Grav.
 It's just a first implementation, willing to change that at least with digest authentication.
-At the moment all users can access the API. Still TODO work on permissions.
+
+Users with `admin.super` or `admin.api` permissions can access the whole API.
+
+## Usage or Basic Authentication on the client-side
 
 On the client side, add the authorization header of the request as follows:
 
