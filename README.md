@@ -2,15 +2,9 @@
 
 The **API Plugin** for [Grav](http://github.com/getgrav/grav) adds a REST API to Grav.
 
-| IMPORTANT!!! This plugin is currently in development as is to be considered a **beta release**.  As such, use this in a production environment **at your own risk!**. More features will be added in the future.
+| IMPORTANT!!! This plugin is currently in development as is to be considered an **alpha release**.  As such, use this in a production environment **at your own risk!**. More features will be added in the future.
 
 # Installation
-
-The API plugin is easy to install with GPM.
-
-```
-$ bin/gpm install api
-```
 
 Or clone from GitHub and put in the `user/plugins/api` folder.
 
